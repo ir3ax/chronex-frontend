@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { IoIosAdd, IoMdClose } from 'react-icons/io';
 import { useQuery } from 'react-query';
 import { useAtom } from 'jotai';
-import { getAllProduct } from '../../../../../../service/product-service';
+import { getAllProductDropdown } from '../../../../../../service/product-service';
 import { productAddAtom } from '../../../../../../atom/orderAtom';
 import { Input } from '../../../../../../components/input';
-import { getAllFreebies } from '../../../../../../service/freebies';
+import { getAllFreebiesDropdown } from '../../../../../../service/freebies';
 
 interface Product {
     productId: string;
@@ -19,18 +19,16 @@ export const AddProductModal = () => {
   const [product, setProduct] = useAtom(productAddAtom);
   const [selectedProductId, setSelectedProductId] = useState<string>('');
   const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
-  const [sortOption] = useState('ATOZ');
   const [selectedFreebiesId, setSelectedFreebiesId] = useState<string>('');
-  const [sortOptionFreebies] = useState('ATOZ');
 
   const { data: productData } = useQuery(
-    ['product-data-order', sortOption],
-    () => getAllProduct(sortOption || 'ATOZ'),
+    ['product-data-order'],
+    () => getAllProductDropdown(),
   );
 
   const { data: freebiesData } = useQuery(
-    ['freebies-data-order', sortOptionFreebies],
-    () => getAllFreebies(sortOptionFreebies || 'ATOZ'),
+    ['freebies-data-order'],
+    () => getAllFreebiesDropdown(),
   );
 
   const handleProductSelection = (productId: string) => {

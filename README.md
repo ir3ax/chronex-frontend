@@ -25,3 +25,15 @@ VITE_FIREBASE_APP_ID=''
 ~ cd src
 ~ npm install
 ~ npm run dev
+
+4. If you want to try the admin side of my app; you can just do the following:
+
+ # 4.1 First go https://chronex-frontend.onrender.com/
+
+ # 4.2 If you want to go the admin side just add the path '/chronex-admin-login' into the url, it will look like this 'https://chronex-frontend.onrender.com/chronex-admin-login'
+
+ # 4.3 You can just use this following credentials:
+
+    Username: admin@gmail.com
+    Password: admin123
+

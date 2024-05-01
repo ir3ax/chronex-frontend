@@ -60,14 +60,14 @@ export const ProductPage: React.FC<ProductProps> = ({ productId, img, productNam
     }
 
     return (
-        <button onClick={redirectToProductDetails} disabled={productStatus === 'SOLD' ? true : false} className={`relative w-full h-full p-6 flex flex-col justify-center items-center text-center gap-2 max-sm:pl-10 max-sm:pr-10 border rounded-md shadow-black shadow-sm`}>
+        <button onClick={redirectToProductDetails} disabled={productStatus === 'SOLD' || productStatus === "INC" ? true : false} className={`relative w-full h-full p-6 flex flex-col justify-center items-center text-center gap-2 max-sm:pl-10 max-sm:pr-10 border rounded-md shadow-black shadow-sm`}>
             {
-                productStatus === 'SOLD' ?
+                productStatus === 'SOLD'  || productStatus === "INC" ?
                 <p className='z-50 flex justify-center items-center absolute pl-8 pr-8 pt-3 pb-3 rounded-md bg-[#8b7575] font-bold text-white'>SOLD OUT</p>
                 :
                 null
             }
-            <div className={`w-full h-full ${productStatus === 'SOLD' ? 'opacity-40' : 'opacity-100'}`}>
+            <div className={`w-full h-full ${productStatus === 'SOLD' || productStatus === "INC" ? 'opacity-40' : 'opacity-100'}`}>
                 <span className='absolute top-0 right-0 bg-[#8b7575] text-white font-bold text-md flex justify-center items-center text-center p-2 rounded-tr-md rounded-bl-md'>
                     {discount}% OFF
                 </span>

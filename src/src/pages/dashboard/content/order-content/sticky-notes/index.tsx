@@ -168,7 +168,7 @@ export const StickyNotes = (props: Xprox) => {
     }
 
     return (
-        <div className={`sticky-notes ${props.isVisible ? 'slide-in' : 'slide-out'} h-full min-h-[100dvh] border bg-[#f7f7f7] w-96 absolute right-0 top-[72px] z-50 flex flex-col shadow-2xl`}>
+        <div className={`sticky-notes ${props.isVisible ? 'slide-in' : 'slide-out'} h-full min-h-[100dvh] border bg-[#f7f7f7] w-96 absolute right-0 top-[3px] z-50 flex flex-col shadow-2xl`}>
             <button onClick={handleCloseSticky} className='flex justify-end items-start w-full mr-2 mt-4'>
                 <IoIosClose className='w-8 h-8 text-[#808080] cursor-pointer' />
             </button>

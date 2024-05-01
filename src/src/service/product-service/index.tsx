@@ -18,6 +18,12 @@ export const getAllProduct = async (sort: string, search: string = '') => {
     return response.data as GetAllProductResponse;
 };
 
+export const getAllProductDropdown = async () => {
+    const response = await axiosInstance.get(`admin/product-dropdown`, {
+    });
+    return response.data as GetAllProductResponse;
+};
+
 export const getProductById = async (productId: string) => {
     const response = await axiosInstance.get(`admin/product/${productId}`)
     return response.data as GetAllProductResponse;
